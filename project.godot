@@ -33,6 +33,11 @@ Console="*res://scenes/objects/menu/console.tscn"
 bg_music="*res://scenes/objects/setup/bg_music.tscn"
 PersistentData="*res://scenes/objects/setup/persistent_data.tscn"
 Record="*res://scenes/objects/setup/record.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+general/balloon_path="res://addons/dialogue_manager/petscop/example_balloon.tscn"
 
 [display]
 
@@ -45,6 +50,10 @@ window/vsync/vsync_mode=0
 [dotnet]
 
 project/assembly_name="Openscop"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -186,6 +195,10 @@ ui_enter={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/lines/care.dialogue")
 
 [physics]
 

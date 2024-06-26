@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://01toj5iidcek"]
+[gd_scene load_steps=25 format=3 uid="uid://01toj5iidcek"]
 
 [ext_resource type="ArrayMesh" uid="uid://bkep2pcnqwibe" path="res://graphics/3d/room_mesh/levels/gift_plane/gift_plane1.obj" id="1_xh375"]
 [ext_resource type="Shader" path="res://shaders/spatial shaders/fog-shader-opaque.gdshader" id="2_78jd8"]
@@ -12,6 +12,9 @@
 [ext_resource type="ArrayMesh" uid="uid://ci3yi2q3llglr" path="res://graphics/3d/room_mesh/levels/gift_plane/gift_plane6.obj" id="10_5eqlb"]
 [ext_resource type="PackedScene" uid="uid://cgugeeeg7p1cs" path="res://scenes/objects/setup/level_manipulator.tscn" id="11_6jioi"]
 [ext_resource type="PackedScene" uid="uid://dng2iqsytyb72" path="res://scenes/objects/setup/player/player.tscn" id="12_wbjph"]
+[ext_resource type="PackedScene" uid="uid://bttaj8jiwmjv6" path="res://scenes/objects/level_objects/interaction_symbol.tscn" id="13_pmp05"]
+[ext_resource type="Shader" path="res://shaders/spatial shaders/sprite3d_fog.gdshader" id="14_vpndf"]
+[ext_resource type="Texture2D" uid="uid://whmjo2a2cyq5" path="res://graphics/sprites/objects/pets/care_b.png" id="15_r07tb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_txfac"]
 render_priority = 0
@@ -69,6 +72,22 @@ shader_parameter/modulate_color = Color(0.351563, 0.355469, 0.882813, 1)
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/uv_pan_velocity = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bevya"]
+render_priority = 0
+shader = ExtResource("14_vpndf")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/transparent_color = Color(1, 0, 1, 1)
+shader_parameter/billboard = true
+shader_parameter/albedoTex = ExtResource("15_r07tb")
+shader_parameter/is_spritesheet = false
+shader_parameter/spritesheet_size = Vector2i(1, 1)
+shader_parameter/sprite = Vector2i(0, 0)
+shader_parameter/enable_auto_animation_x = false
+shader_parameter/enable_auto_animation_y = false
+shader_parameter/frame_count = 1
+shader_parameter/frame_offset = 0
+shader_parameter/animation_speed = 1.0
 
 [node name="giftplane" type="Node3D"]
 
@@ -253,3 +272,18 @@ ambient_color = Color(1, 1, 1, 1)
 environment_darkness = 1.0
 
 [node name="player_root" parent="." instance=ExtResource("12_wbjph")]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0662, 0, -1.59211)
+
+[node name="interaction" parent="Node3D" instance=ExtResource("13_pmp05")]
+dialogue_id = "care"
+
+[node name="sprite" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_bevya")
+offset = Vector2(0, 32)
+pixel_size = 0.015
+billboard = 1
+texture_filter = 0
+texture = ExtResource("15_r07tb")

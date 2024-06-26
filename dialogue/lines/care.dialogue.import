@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://0haf20mxrx8q"
+path="res://.godot/imported/care.dialogue-d15830f13ccb26c4bac3ed4678b20baf.tres"
+
+[deps]
+
+source_file="res://dialogue/lines/care.dialogue"
+dest_files=["res://.godot/imported/care.dialogue-d15830f13ccb26c4bac3ed4678b20baf.tres"]
+
+[params]
+
+defaults=true

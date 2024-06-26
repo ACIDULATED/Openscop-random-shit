@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://53rht4xcqdae"]
+
+[ext_resource type="Shader" path="res://shaders/spatial shaders/sprite3d_fog.gdshader" id="1_h4o60"]
+[ext_resource type="Texture2D" uid="uid://whmjo2a2cyq5" path="res://graphics/sprites/objects/pets/care_b.png" id="2_myl26"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h4o60")
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
+shader_parameter/transparent_color = Color(1, 0, 1, 1)
+shader_parameter/billboard = true
+shader_parameter/albedoTex = ExtResource("2_myl26")
+shader_parameter/is_spritesheet = false
+shader_parameter/spritesheet_size = Vector2i(1, 1)
+shader_parameter/sprite = Vector2i(0, 0)
+shader_parameter/enable_auto_animation_x = false
+shader_parameter/enable_auto_animation_y = false
+shader_parameter/frame_count = 1
+shader_parameter/frame_offset = 0
+shader_parameter/animation_speed = 1.0
